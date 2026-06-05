@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiconductor Companies Tracker</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f1a;
+      color: #e2e8f0;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #a78bfa;
+    }
+    .subtitle {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .table-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 4px 32px rgba(0,0,0,0.4); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1e1e2e;
+      font-size: 0.875rem;
+    }
+    thead tr { background: #2d2d44; }
+    th {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #a78bfa;
+      white-space: nowrap;
+      border-bottom: 2px solid #3d3d5c;
+    }
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #2d2d44;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #252538; }
+    .ticker {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      color: #7dd3fc;
+      font-size: 0.9rem;
+    }
+    .company-name { font-weight: 600; color: #f1f5f9; }
+    .price { color: #4ade80; font-weight: 600; }
+    .market-cap { color: #fb923c; font-weight: 600; }
+    .pe-high { color: #f87171; }
+    .pe-mid  { color: #fbbf24; }
+    .pe-low  { color: #4ade80; }
+    .pe-neg  { color: #94a3b8; font-style: italic; }
+    .ps-high { color: #f87171; }
+    .ps-mid  { color: #fbbf24; }
+    .ps-low  { color: #4ade80; }
+    .note { color: #94a3b8; font-size: 0.78rem; max-width: 280px; line-height: 1.4; }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .tag-ai    { background: #312e81; color: #a5b4fc; }
+    .tag-mem   { background: #1e3a5f; color: #7dd3fc; }
+    .tag-cpu   { background: #1a2e1a; color: #4ade80; }
+    .tag-eq    { background: #3b1f1f; color: #fca5a5; }
+    .tag-lic   { background: #2d1b4e; color: #c4b5fd; }
+    .tag-ana   { background: #1c2b1c; color: #86efac; }
+    .tag-mob   { background: #1a2c3d; color: #93c5fd; }
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      margin-bottom: 1.5rem; font-size: 0.78rem; color: #94a3b8;
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-green  { background: #4ade80; }
+    .dot-yellow { background: #fbbf24; }
+    .dot-red    { background: #f87171; }
+    footer { margin-top: 1.5rem; font-size: 0.75rem; color: #64748b; }
+    footer a { color: #7dd3fc; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<h1>Semiconductor Companies Tracker</h1>
+<p class="subtitle">Data as of June 2026 &mdash; prices approximate &mdash; N/M = not meaningful (negative earnings)</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot dot-green"></div> Low / Attractive</div>
+  <div class="legend-item"><div class="dot dot-yellow"></div> Moderate</div>
+  <div class="legend-item"><div class="dot dot-red"></div> High / Elevated</div>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Company</th>
+        <th>Ticker</th>
+        <th>Stock Price</th>
+        <th>Market Cap</th>
+        <th>Revenue (Annual)</th>
+        <th>P/E Ratio</th>
+        <th>P/S Ratio</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>
+          <div class="company-name">NVIDIA</div>
+          <span class="tag tag-ai">AI GPU</span>
+        </td>
+        <td><span class="ticker">NVDA</span></td>
+        <td class="price">$218.66</td>
+        <td class="market-cap">$5.24T</td>
+        <td>~$175B <small>(FY2026 est.)</small></td>
+        <td class="pe-mid">33</td>
+        <td class="ps-high">~30</td>
+        <td class="note">#1 semiconductor by market cap; AI GPU monopoly; Q4 FY2026 revenue alone was $68.13B (+73% YoY)</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <div class="company-name">Taiwan Semiconductor</div>
+          <span class="tag tag-eq">Foundry</span>
+        </td>
+        <td><span class="ticker">TSM</span></td>
+        <td class="price">$446.69</td>
+        <td class="market-cap">$2.31T</td>
+        <td>$122.42B <small>(FY2025)</small></td>
+        <td class="pe-mid">35</td>
+        <td class="ps-mid">18.8</td>
+        <td class="note">World's largest contract chip fab; Q1 2026 revenue +35.1% YoY; guiding $39–$40B for Q2 2026</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>
+          <div class="company-name">Broadcom</div>
+          <span class="tag tag-ai">AI ASIC</span>
+        </td>
+        <td><span class="ticker">AVGO</span></td>
+        <td class="price">$407.06</td>
+        <td class="market-cap">$1.93T</td>
+        <td>~$65B <small>(FY2025 est.)</small></td>
+        <td class="pe-high">93.5</td>
+        <td class="ps-high">~30</td>
+        <td class="note">Networking + custom AI accelerators; dropped ~12.6% in early Jun 2026 on AI sales outlook</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>
+          <div class="company-name">Micron Technology</div>
+          <span class="tag tag-mem">Memory</span>
+        </td>
+        <td><span class="ticker">MU</span></td>
+        <td class="price">$940.85</td>
+        <td class="market-cap">$1.22T</td>
+        <td>~$40B <small>(FY2025 est.)</small></td>
+        <td class="pe-mid">51.0</td>
+        <td class="ps-high">~30</td>
+        <td class="note">Leading DRAM/NAND/HBM memory; PE is 204% above 10-yr median; HBM demand from AI drives premium</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>
+          <div class="company-name">AMD</div>
+          <span class="tag tag-cpu">CPU/GPU</span>
+        </td>
+        <td><span class="ticker">AMD</span></td>
+        <td class="price">$514.00</td>
+        <td class="market-cap">$853.13B</td>
+        <td>~$38.8B <small>(TTM)</small></td>
+        <td class="pe-high">178.1</td>
+        <td class="ps-high">22.0</td>
+        <td class="note">CPU + data center GPU rival; issued blockbuster Q2 2026 forecast; high PE reflects growth expectations</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>
+          <div class="company-name">ASML Holding</div>
+          <span class="tag tag-eq">Lithography</span>
+        </td>
+        <td><span class="ticker">ASML</span></td>
+        <td class="price">~$1,650</td>
+        <td class="market-cap">$677.35B</td>
+        <td>$32.67B <small>(FY2025)</small></td>
+        <td class="pe-mid">57.3</td>
+        <td class="ps-mid">20.7</td>
+        <td class="note">Monopoly on EUV lithography; most valuable European company; 2026 guidance €36–40B revenue</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>
+          <div class="company-name">ARM Holdings</div>
+          <span class="tag tag-lic">IP Licensor</span>
+        </td>
+        <td><span class="ticker">ARM</span></td>
+        <td class="price">$408.85</td>
+        <td class="market-cap">~$437B</td>
+        <td>$4.92B <small>(FY2026)</small></td>
+        <td class="pe-high">158.4</td>
+        <td class="ps-high">88.7</td>
+        <td class="note">CPU architecture licensor; stock +196% in 52 weeks; premium valuation reflects AI edge/mobile growth</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>
+          <div class="company-name">Intel</div>
+          <span class="tag tag-cpu">CPU/Foundry</span>
+        </td>
+        <td><span class="ticker">INTC</span></td>
+        <td class="price">$107.31</td>
+        <td class="market-cap">$561.86B</td>
+        <td>$53.1B <small>(FY2024)</small></td>
+        <td class="pe-neg">N/M (loss)</td>
+        <td class="ps-low">10.6</td>
+        <td class="note">Restructuring; lost fab leadership; negative EPS; new IFS foundry strategy; lowest PS among large-caps</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>
+          <div class="company-name">Texas Instruments</div>
+          <span class="tag tag-ana">Analog</span>
+        </td>
+        <td><span class="ticker">TXN</span></td>
+        <td class="price">$306.55</td>
+        <td class="market-cap">$277.91B</td>
+        <td>~$17B <small>(FY2025 est.)</small></td>
+        <td class="pe-mid">49.2</td>
+        <td class="ps-mid">~16.3</td>
+        <td class="note">Dominant analog &amp; embedded chip supplier; 58th most valuable company globally; industrial &amp; auto focus</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>
+          <div class="company-name">Qualcomm</div>
+          <span class="tag tag-mob">Mobile/5G</span>
+        </td>
+        <td><span class="ticker">QCOM</span></td>
+        <td class="price">$239.14</td>
+        <td class="market-cap">$255.64B</td>
+        <td>$39B <small>(FY2024)</small></td>
+        <td class="pe-low">26.4</td>
+        <td class="ps-low">6.6</td>
+        <td class="note">Snapdragon SoC &amp; 5G modem leader; lowest PS among peers; diversifying into auto &amp; PC</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>
+          <div class="company-name">Marvell Technology</div>
+          <span class="tag tag-ai">AI ASIC</span>
+        </td>
+        <td><span class="ticker">MRVL</span></td>
+        <td class="price">N/A</td>
+        <td class="market-cap">$112.36B</td>
+        <td>~$6.5B <small>(est.)</small></td>
+        <td class="pe-mid">57.1</td>
+        <td class="ps-mid">~17.3</td>
+        <td class="note">Data infrastructure &amp; custom AI ASIC growth; benefits from hyperscaler AI chip demand</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>
+          <div class="company-name">ON Semiconductor</div>
+          <span class="tag tag-ana">Power/Sensing</span>
+        </td>
+        <td><span class="ticker">ON</span></td>
+        <td class="price">$127.78</td>
+        <td class="market-cap">$50.02B</td>
+        <td>~$5.83B <small>(FY2024)</small></td>
+        <td class="pe-high">94.6</td>
+        <td class="ps-low">8.6</td>
+        <td class="note">Power management &amp; image sensing; EV &amp; industrial automation focus; forward P/E 41.5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>Data sourced from Yahoo Finance, companiesmarketcap.com, GuruFocus, MacroTrends, stockanalysis.com &mdash; as of June 2026.
+  Some revenue figures are estimates. PE = Price-to-Earnings (TTM). PS = Price-to-Sales (TTM). N/M = Not Meaningful.</p>
+  <p style="margin-top:0.5rem;">Sources:
+    <a href="https://companiesmarketcap.com/semiconductors/largest-semiconductor-companies-by-market-cap/">companiesmarketcap.com</a> &bull;
+    <a href="https://stockanalysis.com/stocks/nvda/statistics/">stockanalysis.com</a> &bull;
+    <a href="https://finance.yahoo.com/sectors/technology/semiconductors/">Yahoo Finance</a> &bull;
+    <a href="https://www.gurufocus.com/term/pettm/NVDA">GuruFocus</a>
+  </p>
+</footer>
+
+</body>
+</html>

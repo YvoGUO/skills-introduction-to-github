@@ -1,0 +1,13 @@
+Company,Ticker,Stock Price (USD),Market Cap,Revenue (Annual),PE Ratio (TTM),PS Ratio (TTM),Notes
+NVIDIA,NVDA,$218.66,"$5.24T","~$175B (FY2026 est.)",33.00,~30.0,"#1 by market cap; AI GPU leader; Q4 FY2026 revenue alone was $68.13B"
+Taiwan Semiconductor,TSM,$446.69,"$2.31T","$122.42B (FY2025)",35.00,18.8,"World's largest contract chip manufacturer; Q1 2026 revenue up 35.1% YoY"
+Broadcom,AVGO,$407.06,"$1.93T","~$65B (FY2025 est.)",93.48,~29.7,"Diversified chip & software company; stock dropped ~12.6% on AI outlook concerns Jun 2026"
+Micron Technology,MU,$940.85,"$1.22T","~$40B (FY2025 est.)",50.97,~30.4,"Leading DRAM/NAND memory maker; PE 204% above 10-yr median"
+AMD,AMD,$514.00,"$853.13B","~$38.8B (TTM)",178.06,21.97,"CPU/GPU rival to Intel & NVIDIA; issued blockbuster forecast Jun 2026"
+ASML Holding,ASML,~$1650,"$677.35B","$32.67B (FY2025)",57.25,20.73,"Dutch monopoly on EUV lithography machines; most valuable European company"
+ARM Holdings,ARM,$408.85,"~$437B","$4.92B (FY2026)",158.44,88.73,"CPU IP licensor; stock up +196% in 52 weeks; rev grew 22.8% YoY; premium valuation"
+Intel,INTC,$107.31,"$561.86B","$53.1B (FY2024)",N/M (loss),10.57,"Struggling to regain fab leadership; negative EPS; restructuring underway"
+Texas Instruments,TXN,$306.55,"$277.91B","~$17B (FY2025 est.)",49.19,~16.3,"Analog & embedded chip leader; 58th most valuable company globally"
+Qualcomm,QCOM,$239.14,"$255.64B","$39B (FY2024)",26.39,6.55,"Mobile SoC & modem leader; lowest PS ratio among large-caps listed here"
+Marvell Technology,MRVL,N/A,"$112.36B","~$6.5B (est.)",57.11,~17.3,"Data infrastructure chips; custom AI ASICs growth driver"
+ON Semiconductor,ON,$127.78,"$50.02B","~$5.83B (FY2024)",94.59,8.59,"Power & sensing semiconductors; EV & industrial focus"
